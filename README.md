@@ -16,30 +16,33 @@ In order for parent.py to measure the time taken by your program to just answer 
  4. Your program should now read the name of the <query_file> and the value of k from stdin and process the query using the k-d tree. The output (the k nearest neighbors) should then be written to **results.txt**. (Format specified below)
  5. Your program should then output "1" on stdout so that the parent can stop the timer and check your results.txt.
 
-Sample run.sh and sample.cpp (and a sample.py, in case you wish to work in Python) have been provided to demonstrate how to communicate with parent.py. Feel free to extend them as you need.
+**Sample code is provided** - run.sh and sample.cpp (and a sample.py, in case you wish to work in Python) - to demonstrate how to communicate with parent.py. Feel free to extend them as you need.
+
+**NOTE**: The stdout and stdin of your program are used for communication with the parent.py. Hence, for any debugging purposes, do not print anything on stdout, instead use stderr (using cerr in C++ for example).
 
 ## File Formats
 
  - A point is represented as a space separated list of values along each dimension.
- Eg. 1.2 4.3 represents a 2-dimensional point.
  - Each line in **<dataset_file>** and **results.txt** should contain a point each. <**query_file**> contains a single line (point) in the same format. 
  
  Example: Suppose the points are 2-dimensional and <dataset_file> contains 3 points, it would look something like
-0.0 1.0
-1.0 0.0
-0.0 0.0
+> 0.0 1.0  
+> 1.0 0.0  
+> 0.0 0.0
+
 Now if the <query_file> is:
-1.0 1.0
+> 1.0 1.0
+
 Then for k = 2, results.txt should look like:
-0.0 1.0
-1.0 0.0
+> 0.0 1.0  
+> 1.0 0.0
 
-**NOTE**: The results.txt file **must** be sorted in ascending order of distance to the query point. For a tie-breaker (2 points equi-distant from query point), use lexicographical ordering between the 2 points i.e. if two d-dimensional points A and B are equi-distant from the query point, then A < B if for some 0$\leq$m$\lt$d,  A[m] < B[m] and A[i]=B[i] for 0$\leq$i$\lt$m. (where A[i] represents value of A along i-th dimension) (Eg. [1.0 2.0] < [1.0 3.0])
-
-**NOTE**: The stdout and stdin of your program are used for communication with the parent.py. Hence, for any debugging purposes, do not print anything on stdout, instead use stderr (using cerr in C++ for example).
+**NOTE**: The results.txt file **must** be sorted in ascending order of distance to the query point. For a tie-breaker (2 points equi-distant from query point), use lexicographical ordering between the 2 points i.e. if two d-dimensional points A and B are equi-distant from the query point, then A < B if for some 0 <= m < d, A[m] < B[m] and A[i]=B[i] for 0 <= i < m. (where A[i] represents value of A along i-th dimension) (Eg. [1.0 2.0] < [1.0 3.0])
 
 ## Command to run
 
     python parent.py <dataset_file> <query_file> <k>
-parent.py is compatible with Python 2 and 3 and with both linux and windows. For any issues, feel free to contact:
+parent.py is compatible with Python 2.x and Python 3.x and with both Linux and Windows. However final evaluation will be done using Python 3.x. So, for students using Python in your program, it is recommended to use Python 3.x.
+
+For any issues, feel free to contact:
 Abhishek Gupta <abhi19gupta@gmail.com>
