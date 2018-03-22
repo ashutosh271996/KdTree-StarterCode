@@ -12,7 +12,7 @@ In order for parent.py to measure the time taken by your program to just answer 
 
  1. parent.py will execute `sh run.sh <dataset_file>` as a child process. (run.sh should in turn compile and run your program) (Here <**dataset_file**> is the name of the file containing the data points - Format specified below) 
  2. Your program (child) should construct the k-d tree using <dataset_file> and output "0" on the standard output (stdout) when done. This would be read by the parent.
- 3. parent.py would then write the name/path of the **<query_file>** (which contains the query point for kNN - Format specified below) and the value of **k** on your standard input (stdin). It also starts the timer now.
+ 3. parent.py would then write the name/path of the **<query_file>** (which contains the query point for kNN - Format specified below) and the value of **k** (k in kNN) on your standard input (stdin). It also starts the timer now.
  4. Your program should now read the name of the <query_file> and the value of k from stdin and process the query using the k-d tree. The output (the k nearest neighbors) should then be written to **results.txt**. (Format specified below)
  5. Your program should then output "1" on stdout so that the parent can stop the timer and check your results.txt.
 
