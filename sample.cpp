@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
 	char* query_file = new char[100];
 	int k;
 	cin >> query_file >> k;
-	cerr << dataset_file << " " << query_file << " " << k << endl;
+	// cerr << dataset_file << " " << query_file << " " << k << endl;
 
 	// [TODO] Read the query point from query_file, do kNN using the kdTree and output the answer to results.txt
 
