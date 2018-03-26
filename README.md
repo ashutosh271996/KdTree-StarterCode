@@ -6,7 +6,7 @@ The part (d) of the assignment is a competition among all the students based on 
  
 ## Program Structure
 
-The file **parent.py** is provided to you. It is the program that will time your submission. You are expected to submit your code along with a **run.sh** which compiles and runs your program (Specifications below).
+The file **parent.py** is provided to you (you are not supposed to edit it). It is the program that will time your submission. You are expected to submit your code along with a **run.sh** which compiles and runs your program (Specifications below).
 
 In order for parent.py to measure the time taken by your program to just answer the query (excluding the k-d tree construction time), the following mechanism has been adopted.
 
