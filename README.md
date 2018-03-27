@@ -23,14 +23,22 @@ In order for parent.py to measure the time taken by your program to just answer 
 ## File Formats
 
  - A point is represented as a space separated list of values along each dimension.
- - Each line in **<dataset_file>** and **results.txt** should contain a point each. <**query_file**> contains a single line (point) in the same format. 
+ - **<dataset_file>**:
+ 1. First line is "D N" where D = numer of dimensions and N = number of points. 
+ 2. N lines follow where each line is a D-dimesnional point.
+ - **<query_file>**:
+ 1. First line is "D" where D = number of dimensions
+ 2. Next line is the D-dimensional query point.
+ - **results.txt**: k lines where each line should be a point.
  
  Example: Suppose the points are 2-dimensional and <dataset_file> contains 3 points, it would look something like
+> 2 3  
 > 0.0 1.0  
 > 1.0 0.0  
 > 0.0 0.0
 
 Now if the <query_file> is:
+> 2  
 > 1.0 1.0
 
 Then for k = 2, results.txt should look like:
