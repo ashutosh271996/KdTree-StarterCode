@@ -6,7 +6,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
 
 	char* dataset_file = argv[1];
-
+	//comment to learn git
 	// [TODO] Construct kdTree using dataset_file here
 
 	// Request name/path of query_file from parent by just sending "0" on stdout
